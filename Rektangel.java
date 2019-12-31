@@ -2,16 +2,16 @@ class Rektangel {
   double bredde;
   double lengde;
 
-  public Rektangel(double l, double b){
+  public Rektangel(double l, double b) {
     lengde = l;
     bredde = b;
   }
 
-  public void oekLengde(int okning){
+  public void oekLengde(int okning) {
     lengde += okning;
   }
 
-  public void oekBredde(int okning){
+  public void oekBredde(int okning) {
     bredde += okning;
   }
 
@@ -21,6 +21,22 @@ class Rektangel {
 
   public double omkrets() {
     return (lengde*2) + (bredde*2);
+  }
+
+  public double reduserLengde(int reduksjon) {
+    if (lengde - reduksjon < 0) {
+      System.out.println("Lengden kan ikke reduserer så mye");
+    } else {
+      lengde -= reduksjon;
+    }
+  }
+
+  public double reduserBredde(int reduksjon) {
+    if (bredde - reduksjon < 0) {
+      System.out.println("Lengden kan ikke reduserer så mye");
+    } else {
+      bredde -= reduksjon;
+    }
   }
 }
 
