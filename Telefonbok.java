@@ -12,10 +12,22 @@ class Telefonbok {
 
     In tast = new In();
     Out skjerm = new Out();
+    boolean fortsett = true;
+    do {
+      skjerm.out("Navn: ");
+      String person = tast.inLine();
 
-    skjerm.out("Navn: ");
-    String person = tast.inLine();
+      System.out.println(telefonliste.get(person));
 
-    System.out.println(telefonliste.get(person));
+      skjerm.out("Ønsker du å fortsette: ");
+      String svar = tast.inLine();
+
+      if (svar == "ja") {
+        fortsett = true;
+      } else {
+        fortsett = false;
+      }
+    }
+    while (fortsett = true);
   }
 }
