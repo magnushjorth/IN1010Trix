@@ -12,22 +12,24 @@ class Telefonbok {
 
     In tast = new In();
     Out skjerm = new Out();
-    boolean fortsett = true;
-    do {
-      skjerm.out("Navn: ");
-      String person = tast.inLine();
 
-      System.out.println(telefonliste.get(person));
+    int input = 0;
 
-      skjerm.out("Ønsker du å fortsette: ");
-      String svar = tast.inLine();
+    while (fortsett == true) {
+      System.out.println("Meny:\n0: Søk etter person\n1: Avslutt")
+      int input = tast.inInt();
 
-      if (svar == "ja") {
-        fortsett = true;
-      } else {
-        fortsett = false;
+      if (input == 0) {
+        System.out.println("Hvem vil du ha nummeret til? ");
+        String navn = tast.inLine();
+
+        if (telefonliste.containsKey(navn)) {
+          String tlf = telefonliste.get(navn);
+          System.out.println("Navn: " + navn + ", tlf: " + tlf)
+        } else {
+          System.out.println("Fant ikke " + navn + ".");
+        }
       }
     }
-    while (fortsett = true);
   }
 }
