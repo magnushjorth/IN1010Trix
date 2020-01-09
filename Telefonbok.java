@@ -1,4 +1,5 @@
 import java.util.HashMap;
+import java.util.Scanner;
 import easyIO.*;
 
 class Telefonbok {
@@ -15,9 +16,9 @@ class Telefonbok {
 
     int input = 0;
 
-    while (fortsett == true) {
-      System.out.println("Meny:\n0: Søk etter person\n1: Avslutt")
-      int input = tast.inInt();
+    while (input != 1) {
+      System.out.println("Meny:\n0: Søk etter person\n1: Avslutt");
+      input = Integer.parseInt(in.nextLine());
 
       if (input == 0) {
         System.out.println("Hvem vil du ha nummeret til? ");
@@ -25,11 +26,15 @@ class Telefonbok {
 
         if (telefonliste.containsKey(navn)) {
           String tlf = telefonliste.get(navn);
-          System.out.println("Navn: " + navn + ", tlf: " + tlf)
+          System.out.println("Navn: " + navn + ", tlf: " + tlf);
         } else {
           System.out.println("Fant ikke " + navn + ".");
         }
       }
+    }
+    System.out.println("Oversikt: ");
+    for (String navnekey : telefonliste.keySet()) {
+      System.out.println("Navn: " + navnekey + ", tlf: " + telefonliste.get(navnekey));
     }
   }
 }
