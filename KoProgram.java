@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.ArrayList;
 
 public class KoLapp {
   int nummer;
@@ -14,25 +15,40 @@ public class KoLapp {
 
 public class KoSystem {
 
-  public void trekkKoLapp() {
-    int teller = 0;
+  ArrayList<KoLapp> koLapper = new ArrayList<>();
+  int teller = 0;
 
+  public void trekkKoLapp() {
+    teller++;
     KoLapp nyLapp = new KoLapp(teller);
-    nyLapp.hentNummer();
-    koLapper.add(nyLapp);
+    kolapper.add(nylapp);
+
+    System.out.print("Du har fått tildelt billettnr ");
+    System.out.println(nyLapp.getNummer() + ".");
+    System.out.println("Det står " + (koLapper.size()-1)) + " foran deg. \n");
   }
 
   public void betjenKunde() {
-    //Henter ut, printer ut informasjon og fjerner den forste
-    //kolappen i lista. Gir feilmelding dersom ingen kunder staar i ko.
+    if (koLapper.isEmpty()) {
+      System.out.println("ingen er i kø");
+    } else {
+      KoLapp betjenes = koLapper.remove(0);
+      System.out.print("Kunde med billettnr: ");
+      System.out.println(betjenes.getNummer() + " er betjent. \n");
+    }
   }
 
   public int antKunder() {
-    //Returnerer antall kunder som er i ko.
+    return koLapper.size();
   }
 
   public void printKunderIKo() {
-    //Printer alle kunder i ko
+    System.out.println("Disse er i ko: ");
+
+    for(KoLapp kolapp : koLapper) {
+      System.out.print("nr." + koLapp.getNummer() + ", ");
+    }
+    System.out.println("\n\n");
   }
 }
 
