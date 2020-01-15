@@ -25,7 +25,7 @@ public class KoSystem {
 
     System.out.print("Du har fått tildelt billettnr ");
     System.out.println(nyLapp.getNummer() + ".");
-    System.out.println("Det står " + (koLapper.size()-1)) + " foran deg. \n");
+    System.out.println("Det står", (koLapper.size()-1), "foran deg. \n");
   }
 
   public void betjenKunde() {
@@ -54,6 +54,35 @@ public class KoSystem {
 
 class KoProgram {
   public static void main (String[] args) {
+    KoSystem koSystem = new KoSystem();
+    Scanner scanner = new Scanner(System.in);
+    int valg = 0;
 
+    while (valg != 4) {
+      printMeny();
+      valg = Integer.parseInt(scanner.nextLine());
+
+      if (valg == 1) {
+        koSystem.trekkKoLapp();
+      } else if (valg == 2) {
+        koSystem.betjenKunde();
+      } else if (valg == 3) {
+        koSystem.printKunderIKo();
+      } else if (valg == 4) {
+        System.out.println("Programmet avsluttes.");
+      } else {
+        System.out.println("Error: tast 1, 2, 3 eller 4");
+      }
+    }
+  }
+
+  public static void printMeny() {
+    String meny = "**MENY FOR BILLETTSYSTEM**";
+    meny += "1 - Trekk ny kølapp\n";
+    meny += "2 - Betjen kunde\n";
+    meny += "3 - Print antall i kø\n";
+    meny += "4 - Avslutt\n";
+
+    System.out.println(memy);
   }
 }
