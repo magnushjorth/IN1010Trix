@@ -3,7 +3,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 
-class HundePersoner {
+class HunderPersoner {
   public static void main(String[] args) {
     Scanner scanner = null;
     String linje;
