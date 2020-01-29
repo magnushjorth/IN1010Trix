@@ -16,7 +16,7 @@ class Gruppeoppmoete {
 
   public void registrerOppmoete(String studentnavn) {
     for (int i=0; i<totaltStudenter; i++) {
-      if (studentnavn.equals(navn[i])) {
+      if (studentnavn.toUpperCase().equals(navn[i].toUpperCase())) {
         oppmoete[i] = true;;
       }
     }
