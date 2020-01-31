@@ -1,31 +1,30 @@
-import java.util.ArrayList;
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
 
-class Studentsystem {
+public class StudentSystem {
+  public static void main(String[] args) {
+    Scanner scanner = null;
+    String linje;
+    int tall = -1;
+    Scanner fil = null;
 
-  private ArrayList<String> studenter;
-  private ArrayList<String> fag;
-
-  private Scanner scanner = null;
-  private String test = "";
-
-  public Studentsystem(String filnavn) {
     try {
-      Scanner scanner = new Scanner(new File(filnavn));
+      scanner = new Scanner(new File("emnestudent.txt"));
     } catch (FileNotFoundException error) {
-      System.out.println("Fant ikke filen.");
+      System.out.println("Fant ikke filen");
       System.exit(1);
     }
 
-    while (scanner.hasNextLine()) {
+    while(scanner.hasNextLine()) {
       try {
-        test = scanner.nextLine();
-        if (test.contains("*")) {
-          System.out.println("True");
-        }
-      } catch (Exception error) {}
+        scanner.next()
+        if (scanner.nextLine().equals("*")) {
+        System.out.println("True"); }
+      } catch (InputMismatchException error) {
+        System.out.println("Noe annet en tall ble funnet");
+        System.exit(1);
+      }
     }
   }
 }
