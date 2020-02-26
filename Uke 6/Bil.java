@@ -6,4 +6,9 @@ class Bil {
     this.regnr = regnr;
     this.passasjerseter = passasjerseter;
   }
+
+  @Override
+  public String toString() {
+    return "Bil\nRegnr: " + regnr + "\nPassasjerseter: " + passasjerseter;
+  }
 }

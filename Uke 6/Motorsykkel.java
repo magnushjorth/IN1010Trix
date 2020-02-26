@@ -6,4 +6,9 @@ class Motorsykkel {
     this.regnr = regnr;
     this.motorstorrelse = motorstorrelse;
   }
+
+  @Override
+  public String toString() {
+    return "Motorsykkel\nRegnr: " + regnr + "\nMotorstorrelse: " + motorstorrelse; 
+  }
 }
