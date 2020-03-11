@@ -1,4 +1,6 @@
-class Butikk {
+import java.util.Iterator;
+
+class Butikk implements Iterable<Person> {
   private Person foerste;
 
   public void settInn(Person p) {
@@ -11,6 +13,10 @@ class Butikk {
       }
       midlertidig.settNeste(p);
     }
+  }
+
+  public Iterator<Person> iterator() {
+    return new PersonIterator();
   }
 
   public void gaaTilKassen() {
