@@ -1,14 +1,20 @@
-static void triangel(int m, int n) {
-  String utskrift = ""; // String som vil utvides
-  for (int i = 0; i < m; i++) { // Så lenge i er mindre enn m
-    utskrift+=("*"); // skal stringen utvides
-  }
-  System.out.println(utskrift); // skriver ut stringen
+public class Triangel {
+  static void printTriangler(int m, int n) {
+    String utskrift = "";
+    for (int i = 0; i < m; i++) utskrift+="*";
 
-  if (m == n) { // dersom m er det samme som n
-    System.out.println(utskrift); // skal en skrive ut stringen
-    return; // avslutter
+    System.out.println(utskrift);
+
+    if (m == n) {
+      System.out.println(utskrift);
+      return;
+    }
+
+    printTriangler(m+1, n);
+    System.out.println(utskrift);
   }
 
-  triangel(m+1, n);
-  System.out.println(utskrift);
+  public static void main(String[] args) {
+    printTriangler(3, 5);
+  }
+}
